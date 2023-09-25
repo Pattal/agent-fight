@@ -9,6 +9,7 @@ public class ServiceLocator : MonoBehaviour, IServiceLocatorComponent
 
     private List<IServiceLocatorComponent> _serviceLocatorComponents = new();
     private List<IStartable> _starts = new();
+    private List<IReset> _resets = new();
     private List<IAwakable> _awakes = new();
 
     protected virtual void Awake()
@@ -17,6 +18,7 @@ public class ServiceLocator : MonoBehaviour, IServiceLocatorComponent
         
         Utilities.TryCast(_serviceLocatorComponents, _starts);
         Utilities.TryCast(_serviceLocatorComponents, _awakes);
+        Utilities.TryCast(_serviceLocatorComponents, _resets);
 
         InjectServiceLocatorToComponents();
 
@@ -28,14 +30,9 @@ public class ServiceLocator : MonoBehaviour, IServiceLocatorComponent
         StartComponents();
     }
 
-    protected virtual void AwakeComponents()
+    public void Reset()
     {
-        _awakes.ForEach(awake => awake.CustomAwake());
-    }
-
-    protected virtual void StartComponents()
-    {
-        _starts.ForEach(start => start.CustomStart());
+        _resets.ForEach(e => e.Reset());
     }
 
     public bool TryGetServiceLocatorComponent<T>(out T component)
@@ -54,6 +51,18 @@ public class ServiceLocator : MonoBehaviour, IServiceLocatorComponent
         return false;
     }
 
+
+    protected virtual void AwakeComponents()
+    {
+        _awakes.ForEach(awake => awake.CustomAwake());
+    }
+
+    protected virtual void StartComponents()
+    {
+        _starts.ForEach(start => start.CustomStart());
+    }
+
+    
 
     private void InjectServiceLocatorToComponents()
     {

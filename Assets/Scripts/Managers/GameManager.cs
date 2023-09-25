@@ -8,20 +8,19 @@ public class GameManager : ScriptableObject, IManager, IStartable
     public Bootstrapper Bootstrapper { get; set; }
 
     [SerializeField] private List<GameVariant> _gameVariants;
-    [SerializeField] GameAreaManager _areaManager;
+    [SerializeField] ObjectLifecycleManager _objectLifecycleManager;
     [SerializeField] EndWindowUIControllerVariable _endWindowUIController;
     [SerializeField] GameModeSelectorUIControllerVariable _gameModeSelectorUIController;
 
     public void CustomStart()
     {
-        _areaManager.OnLastAgentExist += ShowEndMenu;
-
+        _objectLifecycleManager.OnLastAgentExist += ShowEndMenu;
         ShowMainMenu();
     }
 
     public void Reset()
     {
-        _areaManager.Reset();
+        _objectLifecycleManager.Reset();
     }
 
     public void MainMenuButtonClicked()
@@ -37,7 +36,7 @@ public class GameManager : ScriptableObject, IManager, IStartable
     private void ShowEndMenu()
     {
         _endWindowUIController.Value.gameObject.SetActive(true);
-        Reset();
+        Bootstrapper.Reset();
     }
 
 

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class GameModeSelectorUIController : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class GameModeSelectorUIController : MonoBehaviour
 
     [SerializeField] Button _confirmButton;
     [SerializeField] Transform _container;
-    [SerializeField] private GameAreaManager _areaManager;
+    [SerializeField] private AgentSpawner _agentSpawner;
 
     private void Start()
     {
@@ -43,7 +42,7 @@ public class GameModeSelectorUIController : MonoBehaviour
             GameVariantUI gameVariantUI = Instantiate(variant.UIPrefab, _container);
 
             gameVariantUI.Quantinty = variant.NumberOfAgents.ToString();
-            gameVariantUI.OnToggleSelected = _areaManager.SpawnObjects;
+            gameVariantUI.OnToggleSelected = _agentSpawner.SpawnObjects;
             gameVariantUI.GameVariant = variant;
 
             _selectableButtons.Add(gameVariantUI);
@@ -65,6 +64,7 @@ public class GameModeSelectorUIController : MonoBehaviour
         if (_selectedButton == buttonAction) return;
         
         _selectedButton = buttonAction;
+        
         _confirmButton.interactable = _selectedButton != null;
     }
 
