@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameModeSelectorUIController : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class GameModeSelectorUIController : MonoBehaviour
     private void DeleteExistingGameVariants()
     {
         _selectableButtons.Clear();
-
+        
         for (int i = _container.childCount - 1; i >= 0; i--)
         {
             Destroy(_container.GetChild(i).gameObject);
@@ -63,7 +64,9 @@ public class GameModeSelectorUIController : MonoBehaviour
     {
         if (_selectedButton == buttonAction) return;
         
+        if(_selectedButton != null) _selectedButton.transform.DOScale(1f, 0.5f);
         _selectedButton = buttonAction;
+        _selectedButton.transform.DOScale(1.2f, 0.5f);
         
         _confirmButton.interactable = _selectedButton != null;
     }
