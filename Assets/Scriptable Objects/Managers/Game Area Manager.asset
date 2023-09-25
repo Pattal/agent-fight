@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pooler: {fileID: 11400000, guid: d88f99e29aca47645b21d77f08b53320, type: 2}
   _meshCollider: {fileID: 11400000, guid: 001a91c2a4799154c8c1245210e32a9c, type: 2}
-  _objectToSpawn: {fileID: 11400000, guid: be2610d4e7b5d1240ad072f56bd271e6, type: 2}
+  _agentToSpawn: {fileID: 11400000, guid: be2610d4e7b5d1240ad072f56bd271e6, type: 2}
+  _bulletToSpawn: {fileID: 11400000, guid: 29c8e919587b13d4eb97035101e871d1, type: 2}

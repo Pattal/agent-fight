@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 418f3983b7af3a74093573d15e2a997d, type: 3}
-  m_Name: Game Manager
+  m_Script: {fileID: 11500000, guid: 83e32140c92b1eb45b2eb8252a48463a, type: 3}
+  m_Name: Green Game Variant
   m_EditorClassIdentifier: 
-  areaManager: {fileID: 0}
+  <NumberOfAgents>k__BackingField: 100
+  <UIPrefab>k__BackingField: {fileID: 6244937040966672258, guid: c742b81aa046d5947a1993798a9343a8, type: 3}
