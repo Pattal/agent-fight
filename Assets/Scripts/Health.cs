@@ -28,7 +28,17 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
 
     public void CustomStart()
     {
+        SetStartingHealth();
+    }
+
+    private void SetStartingHealth()
+    {
         _health = _startHealth;
+    }
+
+    public void ResetHealth()
+    {
+        SetStartingHealth();
     }
 }
 
@@ -38,5 +48,6 @@ public interface IDamagable
     public event Action<ServiceLocator> OnDead;
 
     public void TakeDamage();
+    public void ResetHealth();
 }
 
