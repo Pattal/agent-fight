@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStartable
+public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStartable, IReset
 {
     public ServiceLocator MyServiceLocator { get; set; }
 
@@ -16,6 +16,11 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
 
     private int _health;
 
+    public void CustomStart()
+    {
+        SetStartingHealth();
+    }
+
     public void TakeDamage()
     {
         _health--;
@@ -23,12 +28,6 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
 
         if(_health <= 0 ) OnDead?.Invoke(MyServiceLocator);
         else OnHealthTaken?.Invoke(MyServiceLocator);
-
-    }
-
-    public void CustomStart()
-    {
-        SetStartingHealth();
     }
 
     private void SetStartingHealth()
@@ -36,7 +35,7 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
         _health = _startHealth;
     }
 
-    public void ResetHealth()
+    public void Reset()
     {
         SetStartingHealth();
     }
@@ -48,6 +47,5 @@ public interface IDamagable
     public event Action<ServiceLocator> OnDead;
 
     public void TakeDamage();
-    public void ResetHealth();
 }
 

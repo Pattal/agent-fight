@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d64e792563b7394da7164d303894bfa, type: 3}
+  m_Name: Square Game Area Manager
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 11400000, guid: 001a91c2a4799154c8c1245210e32a9c, type: 2}
+  _objectsLifecycleManager: {fileID: 11400000, guid: 87eaaa2792c1b0644a238bd8635ebe7c, type: 2}

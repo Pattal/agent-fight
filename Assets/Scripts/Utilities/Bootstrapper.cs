@@ -47,7 +47,7 @@ public class Bootstrapper : MonoBehaviour
         Reset();
     }
 
-    private void Reset()
+    public void Reset()
     {
         serializedManagers.ForEach(manager => manager.Value.Reset());
     }

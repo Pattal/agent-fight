@@ -80,6 +80,7 @@ public class ObjectPooler : MonoBehaviour
         pool.UsedGameObjects.Remove(gameObjectServiceLocator);
 
         gameObjectServiceLocator.gameObject.SetActive(false);
+        gameObjectServiceLocator.Reset();
         gameObjectServiceLocator.gameObject.transform.SetParent(transform, false);
     }
 
@@ -89,7 +90,10 @@ public class ObjectPooler : MonoBehaviour
             return;
 
         foreach (ServiceLocator gameObjectInPool in _poolsDictionary[poolTag].UsedGameObjects)
+        {
             gameObjectInPool.gameObject.SetActive(false);
+            gameObjectInPool.Reset();
+        }
 
         _poolsDictionary[poolTag].UsedGameObjects.Clear();
     }
@@ -122,32 +126,7 @@ public class ObjectPooler : MonoBehaviour
         Debug.Log($"All objects from pool with tag {poolTag} is used, pool was expanded");
         pool.SizeOfPool++;
 
-        // if there are no object's we can expand our pool of objects by some value, or, we can create one object and return it
-        //ExpandPool(poolTag);
-
         return CreatePoolObject(pool);
-
-        //return _poolsDictionary[poolTag].ListOfPool.FirstOrDefault(x => !x.gameObject.activeSelf);
-    }
-
-    private void ExpandPool(PoolID poolTag)
-    {
-        Pool pool = _poolsDictionary[poolTag];
-
-        pool.SizeOfPool += _defaultValueOfExpand;
-
-        for (int i = 0; i < _defaultValueOfExpand; i++)
-            CreatePoolObject(pool);
-    }
-
-    private void ExpandPool(PoolID poolTag, int amountToExpand)
-    {
-        Pool pool = _poolsDictionary[poolTag];
-
-        pool.SizeOfPool += amountToExpand;
-
-        for (int i = 0; i < amountToExpand; i++)
-            CreatePoolObject(pool);
     }
 
     private bool CheckIfPoolCreated(PoolID poolTag)

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2829d51b00954994eabfd8026984eb16, type: 3}
+  m_Name: AgentsSpawner
+  m_EditorClassIdentifier: 
+  _pooler: {fileID: 11400000, guid: d88f99e29aca47645b21d77f08b53320, type: 2}
+  _areaManager: {fileID: 11400000, guid: 763e15b8072a2cf408318e51570c3df2, type: 2}
+  _agentPoolID: {fileID: 11400000, guid: be2610d4e7b5d1240ad072f56bd271e6, type: 2}
+  _bulletPoolID: {fileID: 11400000, guid: 29c8e919587b13d4eb97035101e871d1, type: 2}
