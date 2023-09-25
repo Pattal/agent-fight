@@ -53,7 +53,7 @@ MonoBehaviour:
     ListOfPool: []
   - ID: {fileID: 11400000, guid: 29c8e919587b13d4eb97035101e871d1, type: 2}
     Prefab: {fileID: 2050461233878259691, guid: 9b65d3eeda709804da0d07c891ff2528, type: 3}
-    SizeOfPool: 500
+    SizeOfPool: 600
     UsedGameObjects: []
     ListOfPool: []
   _parent: {fileID: 6398841106525951250}

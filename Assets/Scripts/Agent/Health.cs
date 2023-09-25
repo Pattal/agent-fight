@@ -12,7 +12,6 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
     public event Action<ServiceLocator> OnDead;
 
     [SerializeField] private int _startHealth;
-    [SerializeField] private TextMeshProUGUI textMeshProUGUI;
 
     private int _health;
 
@@ -24,10 +23,11 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
     public void TakeDamage()
     {
         _health--;
-        textMeshProUGUI.text = _health.ToString();
 
-        if(_health <= 0 ) OnDead?.Invoke(MyServiceLocator);
-        else OnHealthTaken?.Invoke(MyServiceLocator);
+        if(_health <= 0 ) 
+            OnDead?.Invoke(MyServiceLocator);
+        else 
+            OnHealthTaken?.Invoke(MyServiceLocator);
     }
 
     private void SetStartingHealth()
@@ -41,11 +41,5 @@ public class Health : MonoBehaviour, IServiceLocatorComponent, IDamagable, IStar
     }
 }
 
-public interface IDamagable
-{
-    public event Action<ServiceLocator> OnHealthTaken;
-    public event Action<ServiceLocator> OnDead;
 
-    public void TakeDamage();
-}
 

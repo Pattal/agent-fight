@@ -12,7 +12,7 @@ public abstract class GameAreaManager<T> : ScriptableObject, IManager where T : 
 
     public abstract Vector3 GetRandomPointInBounds();
 
-    public bool TryGetEmptySpaceOnMap(out Vector3 newPosition)
+    public bool TryGetEmptySpaceOnMap(out Vector3 newPosition) //simple recursion method that using random point on game area. It could be also done by sampling game area.
     {
         int numberOfExecution = 0;
 
@@ -46,7 +46,6 @@ public abstract class GameAreaManager<T> : ScriptableObject, IManager where T : 
     }
 
     public void Reset()
-    {
-        
+    {  
     }
 }

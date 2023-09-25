@@ -8,9 +8,9 @@ public class GameManager : ScriptableObject, IManager, IStartable
     public Bootstrapper Bootstrapper { get; set; }
 
     [SerializeField] private List<GameVariant> _gameVariants;
-    [SerializeField] ObjectLifecycleManager _objectLifecycleManager;
-    [SerializeField] EndWindowUIControllerVariable _endWindowUIController;
-    [SerializeField] GameModeSelectorUIControllerVariable _gameModeSelectorUIController;
+    [SerializeField] private ObjectLifecycleManager _objectLifecycleManager;
+    [SerializeField] private EndWindowUIControllerVariable _endWindowUIController;
+    [SerializeField] private GameModeSelectorUIControllerVariable _gameModeSelectorUIController;
 
     public void CustomStart()
     {
@@ -38,8 +38,6 @@ public class GameManager : ScriptableObject, IManager, IStartable
         _endWindowUIController.Value.gameObject.SetActive(true);
         Bootstrapper.Reset();
     }
-
-
 }
 
 

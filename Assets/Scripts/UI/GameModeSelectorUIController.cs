@@ -7,11 +7,11 @@ using DG.Tweening;
 public class GameModeSelectorUIController : MonoBehaviour
 {
     [SerializeField] private List<GameVariantUI> _selectableButtons;
-    private GameVariantUI _selectedButton;
-
-    [SerializeField] Button _confirmButton;
-    [SerializeField] Transform _container;
+    [SerializeField] private Button _confirmButton;
+    [SerializeField] private Transform _container;
     [SerializeField] private AgentSpawner _agentSpawner;
+
+    private GameVariantUI _selectedButton;
 
     private void Start()
     {

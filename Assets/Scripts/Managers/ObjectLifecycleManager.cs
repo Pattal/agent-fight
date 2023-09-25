@@ -41,7 +41,6 @@ public class ObjectLifecycleManager : ScriptableObject, IManager, IStartable
         objectToRespawn.gameObject.SetActive(true);
     }
 
-
     private void StartKillCoroutine(ServiceLocator objectToKill)
     {
         Bootstrapper.StartCoroutine(Kill(objectToKill));
@@ -58,14 +57,17 @@ public class ObjectLifecycleManager : ScriptableObject, IManager, IStartable
         health.OnDead -= StartKillCoroutine;
 
         _spawnedAgents.Remove(spawnable);
+        CheckIfLastAgent();
 
-        Debug.Log(_spawnedAgents.Count);
+        yield return null;
+    }
+
+    private void CheckIfLastAgent()
+    {
         if (_spawnedAgents.Count < 2)
         {
             OnLastAgentExist?.Invoke();
         }
-
-        yield return null;
     }
 
     private void AddAgentToList(ISpawnableOnMap spawnable, IDamagable damagable)

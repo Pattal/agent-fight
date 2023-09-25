@@ -16,7 +16,6 @@ public class SquareGameAreaManager : GameAreaManager<MeshColliderVariable>, ISta
 
     public override bool IsPointInBounds(Vector3 point) => point.x > _boundsMin.x && point.x < _boundsMax.x && point.z > _boundsMin.z && point.z < _boundsMax.z;
   
-
     private void GetBoundsSize()
     {
         _boundsMax = _collider.Value.bounds.max;

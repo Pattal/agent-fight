@@ -6,10 +6,10 @@ public class AgentSpawner : ScriptableObject, IManager, IStartable
 {
     public event Action<ISpawnableOnMap, IDamagable> OnAgentSpawn;
 
-    [SerializeField] ObejctPoolerVariable _pooler;
-    [SerializeField] SquareGameAreaManager _areaManager;
-    [SerializeField] PoolID _agentPoolID;
-    [SerializeField] PoolID _bulletPoolID;
+    [SerializeField] private ObejctPoolerVariable _pooler;
+    [SerializeField] private SquareGameAreaManager _areaManager;
+    [SerializeField] private PoolID _agentPoolID;
+    [SerializeField] private PoolID _bulletPoolID;
 
     public Bootstrapper Bootstrapper { get; set; }
 
