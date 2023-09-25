@@ -33,12 +33,7 @@ public class GameAreaManager : ScriptableObject, IManager, IStartable
         return point.x > _boundsMin.x && point.x < _boundsMax.x && point.z > _boundsMin.z && point.z < _boundsMax.z;
     }
 
-    public void Spawn50()
-    {
-        SpawnObjects(5);
-    }
-
-    private void SpawnObjects(int quantity)
+    public void SpawnObjects(int quantity)
     {
         
         for (int i = 0; i < quantity; i++)

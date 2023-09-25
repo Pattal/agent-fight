@@ -77,6 +77,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Window
       objectReference: {fileID: 0}
+    - target: {fileID: 2374475771587659144, guid: 20e91d471867e0d46ab5a2b9f728b6c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5730709217810091068, guid: 20e91d471867e0d46ab5a2b9f728b6c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
