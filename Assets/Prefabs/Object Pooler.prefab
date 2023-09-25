@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &483073358852946896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6398841106525951250}
+  - component: {fileID: 1670410300523094117}
+  - component: {fileID: 123336256713833421}
+  m_Layer: 0
+  m_Name: Object Pooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6398841106525951250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483073358852946896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1670410300523094117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483073358852946896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c412dd540a33c4a815443aa7cf755e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pools:
+  - ID: {fileID: 11400000, guid: be2610d4e7b5d1240ad072f56bd271e6, type: 2}
+    Prefab: {fileID: 5037221129304614984, guid: cb86d7f56b3e1074084b43d39197ab3c, type: 3}
+    SizeOfPool: 20
+    UsedGameObjects: []
+    ListOfPool: []
+  - ID: {fileID: 11400000, guid: 29c8e919587b13d4eb97035101e871d1, type: 2}
+    Prefab: {fileID: 2050461233878259691, guid: 9b65d3eeda709804da0d07c891ff2528, type: 3}
+    SizeOfPool: 20
+    UsedGameObjects: []
+    ListOfPool: []
+  _parent: {fileID: 6398841106525951250}
+  _defaultValueOfExpand: 1
+--- !u!114 &123336256713833421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483073358852946896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcca6a7143522634da3c64c3a387fefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reference: {fileID: 1670410300523094117}
+  HookVariable: {fileID: 11400000, guid: d88f99e29aca47645b21d77f08b53320, type: 2}
+  _clearOnDisable: 1
