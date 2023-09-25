@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1785147417647289244}
   - component: {fileID: 2050461233878259691}
+  - component: {fileID: 1518996768635033903}
+  - component: {fileID: 8627194731580048694}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -45,8 +47,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d03313cad54a5c499c66eecb754337a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1518996768635033903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996483340275265485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c768a6895bbf24499587ad8b25e66da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8627194731580048694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996483340275265485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f25642f7b6d2384399242234b9500c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _obejctPooler: {fileID: 11400000, guid: d88f99e29aca47645b21d77f08b53320, type: 2}
-  _gameAreaManager: {fileID: 11400000, guid: d443f98a19cb26647935535025b932e0, type: 2}
+  _gameAreaManager: {fileID: 11400000, guid: 763e15b8072a2cf408318e51570c3df2, type: 2}
 --- !u!1 &3609302402216580879
 GameObject:
   m_ObjectHideFlags: 0

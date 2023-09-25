@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418f3983b7af3a74093573d15e2a997d, type: 3}
   m_Name: Game Manager
   m_EditorClassIdentifier: 
-  _areaManager: {fileID: 11400000, guid: d443f98a19cb26647935535025b932e0, type: 2}
+  _gameVariants:
+  - {fileID: 11400000, guid: cb00f72b10572fc44b87f49f88b8685e, type: 2}
+  - {fileID: 11400000, guid: dba221c2ace53524eb68fa93e324c463, type: 2}
+  - {fileID: 11400000, guid: 0933432db6721014f94c30184992065f, type: 2}
+  - {fileID: 11400000, guid: a2a8e536426d1474b9dd814e0bcb207a, type: 2}
+  _objectLifecycleManager: {fileID: 11400000, guid: 87eaaa2792c1b0644a238bd8635ebe7c, type: 2}
   _endWindowUIController: {fileID: 11400000, guid: cee0d41632453674d88546f9d88de2ed, type: 2}
   _gameModeSelectorUIController: {fileID: 11400000, guid: 60e69fa7515a03649b265f5a0e4a6aee, type: 2}

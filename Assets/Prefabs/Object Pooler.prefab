@@ -48,12 +48,12 @@ MonoBehaviour:
   _pools:
   - ID: {fileID: 11400000, guid: be2610d4e7b5d1240ad072f56bd271e6, type: 2}
     Prefab: {fileID: 5037221129304614984, guid: cb86d7f56b3e1074084b43d39197ab3c, type: 3}
-    SizeOfPool: 20
+    SizeOfPool: 500
     UsedGameObjects: []
     ListOfPool: []
   - ID: {fileID: 11400000, guid: 29c8e919587b13d4eb97035101e871d1, type: 2}
     Prefab: {fileID: 2050461233878259691, guid: 9b65d3eeda709804da0d07c891ff2528, type: 3}
-    SizeOfPool: 40
+    SizeOfPool: 500
     UsedGameObjects: []
     ListOfPool: []
   _parent: {fileID: 6398841106525951250}

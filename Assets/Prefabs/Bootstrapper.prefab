@@ -46,4 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedManagers:
   - _underlyingValue: {fileID: 11400000, guid: de43ab205a91ed5418949b73a1251a5f, type: 2}
-  - _underlyingValue: {fileID: 11400000, guid: d443f98a19cb26647935535025b932e0, type: 2}
+  - _underlyingValue: {fileID: 11400000, guid: 763e15b8072a2cf408318e51570c3df2, type: 2}
+  - _underlyingValue: {fileID: 11400000, guid: 87eaaa2792c1b0644a238bd8635ebe7c, type: 2}
+  - _underlyingValue: {fileID: 11400000, guid: c64ceb51448d49a41b8fad945a914621, type: 2}
