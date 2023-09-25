@@ -14,7 +14,7 @@ public class ServiceLocator : MonoBehaviour, IServiceLocatorComponent
     protected virtual void Awake()
     {
         GetServiceLocatorComponents();
-
+        
         Utilities.TryCast(_serviceLocatorComponents, _starts);
         Utilities.TryCast(_serviceLocatorComponents, _awakes);
 

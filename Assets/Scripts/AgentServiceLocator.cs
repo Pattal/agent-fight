@@ -2,13 +2,6 @@ using UnityEngine;
 
 public class AgentServiceLocator : ServiceLocator
 {
-    protected override void Start()
-    {
-        base.Start();
-
-        if (TryGetServiceLocatorComponent(out Rotator rotator))
-            StartCoroutine(rotator.Rotate());
-    }
 }
 
 public interface IServiceLocatorComponent 
@@ -28,11 +21,12 @@ public interface IAwakable
 
 public interface IManager
 {
+    public Bootstrapper Bootstrapper { get; set; }
     public void Reset();
 }
 
 public interface ISpawnableOnMap
 {
-    public bool CoordiantesAreInsideObject(Vector3 coordiantes);
+    public bool IsPlaceTakenByObject(Vector3 coordiantes);
 }
 
