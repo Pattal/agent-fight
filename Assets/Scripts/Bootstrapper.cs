@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using AYellowpaper;
 
-
 public class Bootstrapper : MonoBehaviour
 {
     [SerializeField] private List<InterfaceReference<IManager>> serializedManagers;
@@ -11,7 +10,13 @@ public class Bootstrapper : MonoBehaviour
 
     private void Start()
     {
+        InjectBootstrapper();
         StartManagers();
+    }
+
+    public Coroutine StartCoroutine(Coroutine coroutine)
+    {
+        return StartCoroutine(coroutine);
     }
 
     private void StartManagers()
@@ -29,6 +34,12 @@ public class Bootstrapper : MonoBehaviour
             catch (Exception ex) { Debug.LogException(ex); }
 
         });
+    }
+
+    private void InjectBootstrapper()
+    {
+        foreach (var manager in serializedManagers) 
+            manager.Value.Bootstrapper = this;
     }
 
     private void OnDisable()
